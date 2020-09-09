@@ -14,9 +14,10 @@ var blueSpeed = 2;
 function preload (){
 	blueIdle = loadImage ("blueidle.gif");
 	blueWalk = loadImage ("bluewalk.gif");
-	blueWalkback = loadImage ("bluewalkback.gif");
-	blueWalkRight - loadImage("bluewalkright.gif");
+	blueWalkBack = loadImage ("bluewalkback.gif");
+	blueWalkRight = loadImage("bluewalkright.gif");
 	blueWalkLeft = loadImage ("bluewalkleft.gif");
+}	
 
 function setup() {
 	createCanvas (640,480);
@@ -27,13 +28,13 @@ function setup() {
 
 function draw() {
 	
-	background(100,100,100);
+	background(110, 86, 120);
 
 	/* LOGIC + EVENTS = CHARACTER MOVEMENT*/
 
 	var blueIsWalking = false;
 	
-	image(blueidle,blueX,blueY );
+	//image(blueIdle,blueX,blueY );
 	if (keyIsDown(RIGHT_ARROW)) {
 		image(blueWalkRight,blueX,blueY);
 		blueX += blueSpeed; 
@@ -42,7 +43,7 @@ function draw() {
 	}
 	else if (keyIsDown(LEFT_ARROW)) {
 		image(blueWalkLeft,blueX,blueY);	
-		blueX -= blueSpeed; 
+		blueX-= blueSpeed; 
 		blueIsWalking = true;
 
 	}
@@ -62,10 +63,9 @@ function draw() {
 	if (blueIsWalking) {
 		image(blueWalk,blueX,blueY);
 	}
-	
+	*/
 	 else{
 		image(blueIdle,blueX,blueY);
 	}		
-	*/
+	
 	}
-}
