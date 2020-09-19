@@ -11,6 +11,9 @@ var blueX, blueY;
 var blueSpeed = 2;
 var floor;
 var brickWall;
+var treasure;
+var treasureX= [50, 306]; 
+var treasureY= [300, 348];
 
 
 function preload (){
@@ -21,6 +24,8 @@ function preload (){
 	blueWalkLeft = loadImage ("bluewalkleft.gif");
 	brickwall = loadImage("brickwalltexture.png");
 	floor = loadImage("floor232.png");
+	treasure = loadImage("treasure1.png");
+
 }	
 
 function setup() {
@@ -41,8 +46,8 @@ function draw() {
 	var tileCounter= 0;
 
 
-
 // with variable counter 
+// brick wall texture
 
 	for (var brickCounter = 0; brickCounter < 16; brickCounter +=1 ){
 		image(brickwall, brickCounter * 32,0);
@@ -55,6 +60,8 @@ function draw() {
 	}
 // x  is the variable counter 
 // let keeps the x variable in this one statement. 
+// wood floor texture 
+
 	for ( let x = 0; x < 16; x += 1 ){
 		image(floor, x * 32, 240 );
 		image(floor, x * 32, 272 );
@@ -69,6 +76,10 @@ function draw() {
 	}
 
 
+// treasure chests and position 
+	for ( let i = 0; i < treasureX.length; i++){
+		image(treasure, treasureX[i],treasureY[i]);
+}
 
 console.log(mouseX,mouseY);
 
