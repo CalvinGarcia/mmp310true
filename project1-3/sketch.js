@@ -14,6 +14,14 @@ var brickWall;
 var treasure;
 var treasureX= [50, 306]; 
 var treasureY= [300, 348];
+var ghost 
+var ghostposition = [
+
+[90,400]
+
+
+]; 
+
 
 
 function preload (){
@@ -25,7 +33,7 @@ function preload (){
 	brickwall = loadImage("brickwalltexture.png");
 	floor = loadImage("floor232.png");
 	treasure = loadImage("treasure1.png");
-
+	ghost = loadImage("ghost.png");
 }	
 
 function setup() {
@@ -44,6 +52,8 @@ function draw() {
 	//loop
 
 	var tileCounter= 0;
+
+
 
 
 // with variable counter 
@@ -81,13 +91,33 @@ function draw() {
 		image(treasure, treasureX[i],treasureY[i]);
 }
 
-console.log(mouseX,mouseY);
+// ghost animation 
+
+	for ( let i = 0; i < ghostposition.length; i++){
+		image(ghost,ghostposition[i][0],ghostposition[i][1]);
+
+		ghostposition[i][0]
+			if (ghostposition [i][0] > width){
+				(ghostposition [i][0] += 2);
+
+			}
+				ghostposition[i][0] += 2 ;{
+					if ( ghostposition[i][0]> width ){
+						ghostposition[i][0] = random(0,300);
+						ghostposition[i][1] = random(0,400);
+					}
+				}
+		}
+	
+
+
 
 	/* LOGIC + EVENTS = CHARACTER MOVEMENT*/
 
+	//blue walking logic 
+
 	var blueIsWalking = false;
 	
-	//image(blueIdle,blueX,blueY );
 	if (keyIsDown(RIGHT_ARROW)) {
 		image(blueWalkRight,blueX,blueY);
 		blueX += blueSpeed; 
@@ -121,4 +151,5 @@ console.log(mouseX,mouseY);
 		image(blueIdle,blueX,blueY);
 	}		
 	
-	}
+	
+}
