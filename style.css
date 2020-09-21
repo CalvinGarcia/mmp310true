@@ -98,7 +98,10 @@ img{
 	color:black;
 }
 
-
+.project img{
+	max-height: 200px;
+	max-width:200px ;
+}
 
 .project a:link {
 
