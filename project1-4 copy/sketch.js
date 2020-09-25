@@ -180,9 +180,9 @@ for ( let i = 0; i< tileCounter; i++){
 	}	
 
 
-	ghostChat("Go talk to that other guy." , 50,300,100,100);
+	ghostChat("It's at the bottom of the steps." , 50,300,100,100);
 
-	ghostChat("get out of here kid.", 250,280,250,280);
+	ghostChat("Go talk to that other guy.", 250,280,250,280);
 /*
 	if (keyIsDown (UP_ARROW) && blueY < height/2 +25){
 		blueY -= blueSpeed;
