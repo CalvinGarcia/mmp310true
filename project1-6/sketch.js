@@ -118,7 +118,7 @@ function reSwap(){
 		scene = 'main' 
 
 	}
-/*
+
 function winSwap(){
 		scene = 'win' 
 
@@ -126,7 +126,10 @@ function winSwap(){
 		blueY = blueMainY;
 
 	}
-*/
+
+function loseSwap(){
+		scene = 'lose'
+}
 
 function draw(){
 		//scene manager 
@@ -140,6 +143,9 @@ function draw(){
 		else if( scene == 'win'){
 			win();
 		}
+
+		else if( scene == 'lose'){
+			lose();
 	}
 
 function main() {
@@ -327,6 +333,38 @@ function win(){
 		reSwap();
 	}
 }
-		
 
-	
+function lose(){ 
+
+
+	var brickCounter = 13;
+	var tileCounter = 13; 
+
+
+
+
+	for(let i = 0; i < brickCounter; i ++){
+		for(let y = 0; y < 300; y += 32){
+			image(redBrickWall, i * 32, y);
+		}
+	}
+
+	//groundY position. 	
+	for ( let i = 0; i< tileCounter; i++){
+		for(let y = 300; y < height; y += 32){
+			image(floor, i *32,y);
+		}
+	}
+
+
+
+	image(blueWalkRight,blueX,blueY);
+
+	text("HaHa You lose, Try Again Press M!",width/2, height/2); 
+
+	if (keyIsDown(77)){
+		sceneSwap();
+	}
+}		
+
+}	
