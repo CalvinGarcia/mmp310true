@@ -22,6 +22,7 @@ var stairs;
 //var ghostposition =
 var scene = "main"; // basement , bedroom 
 var redBrickWall ;
+var stairsUp
 
 
 
@@ -39,6 +40,7 @@ function preload (){
 	ghost = loadImage("ghost.png");
 	stairs = loadImage("stairs.png");
 	redBrickWall = loadImage("redwalltexture.png");
+	stairsUp = loadImage("staircaseup.png")
 
 
 }	
@@ -88,6 +90,10 @@ function setup() {
 
 function sceneSwap(){
 	scene = 'basement';
+}
+
+function reSwap(){
+	scene = 'main'
 }
 
 function draw(){
@@ -212,7 +218,7 @@ stairSet(stairs,200,240);
 
 
 function stairSet(img, x, y){
-	image(stairs, x, y);
+	image(img, x, y);
 
 //	if( blueX - blueIdle.width/ 2 < x + stairs.width/5 ){
 	if ( blueX - blueIdle.width/5 < x + treasure.width/5 && 
@@ -234,18 +240,22 @@ var brickCounter = 13;
 var tileCounter = 13; 
 
 
+
+
 for(let i = 0; i < brickCounter; i ++){
 	for(let y = 0; y < 200; y += 32){
 		image(redBrickWall, i * 32, y);
 	}
 }
 
-//fixed gap in floor texture
+
 for ( let i = 0; i< tileCounter; i++){
 	for(let y = 200; y < height; y += 32){
 		image(floor, i *32,y);
 	}
 }
+
+	stairSet(stairsUp,300,300);
 
 	var blueIsWalking = false;
 
@@ -312,11 +322,22 @@ for ( let i = 0; i< tileCounter; i++){
 		image(blueIdle,blueX,blueY);
 	}	
 
+
+
+function stairSet(img, x, y){
+	image(img, x, y);
+
+//	if( blueX - blueIdle.width/ 2 < x + stairs.width/5 ){
+	if ( blueX - blueIdle.width/5 < x + treasure.width/5 && 
+		 blueX + blueIdle.width/5 > x - treasure.width/5 &&
+		 blueY - blueIdle.width/4 < y + treasure.width/5 &&
+		 blueY + blueIdle.width/4 > y - treasure.width/5 ) {	
+		reSwap();
 }
 
 
-	
+	}
 
 	
 
-
+}
