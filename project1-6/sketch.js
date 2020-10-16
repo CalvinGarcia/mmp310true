@@ -22,10 +22,15 @@ var stairs;
 //var ghostposition =
 var scene = "main"; // basement , bedroom 
 var redBrickWall ;
-var stairsUp
-var blueMainX
-var blueMainY 
-var groundY = 300;
+var stairsUp;
+var blueMainX;
+var blueMainY ;
+var groundY = 260; 
+var GRAVITY = 2; // acceleration 2px per frame
+var blueYSpeed = 2;
+var blueIsJumping = false;
+var attacker; 
+var jump; 
 
 
 
@@ -43,6 +48,8 @@ function preload (){
 	stairs = loadImage("stairs.png");
 	redBrickWall = loadImage("redwalltexture.png");
 	stairsUp = loadImage("staircaseup.png")
+	jump = loadImage("jump.gif"); 
+	attacker = loadImage("ghostattack.png")
 
 
 }	
@@ -297,7 +304,32 @@ function basement(){
 		}
 	}
 
+
+
+	if(blueY < 260){
+		blueYSpeed += GRAVITY;
+	}
+
+	else{ 
+
+		blueYSpeed = 0;
+
+	}
+
+
+	//jump 
+	if(!blueIsJumping && keyIsDown(32)){
+		blueYSpeed = -10;
+	}
+
+	blueY  += blueYSpeed;
+
+
+
 	image(blueWalkRight,blueX,blueY);
+
+
+
 
 }
 
