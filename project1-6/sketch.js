@@ -26,11 +26,13 @@ var stairsUp;
 var blueMainX;
 var blueMainY ;
 var groundY = 260; 
-var GRAVITY = 2; // acceleration 2px per frame
+var GRAVITY = 1; // acceleration 2px per frame
 var blueYSpeed = 2;
-var blueIsJumping = false;
+var blueIsJumping = true;
 var attacker; 
 var jump; 
+//ghost x values go in the array below
+var AttackPositions = [];
 
 
 
@@ -103,14 +105,25 @@ function setup() {
 //equal to setupGame
 function sceneSwap(){
 		
-
+	//saves map position 
 		blueMainX = blueX;
 		blueMainY = blueY;
 
+	//sets jerry's position in basement for game
+		
 		blueX = 50;
 		blueY = groundY;
 
+		AttackPositions = [];
+		var attackerNumber = random (4,8);
+		for( let i = 0; i < attackerNumber; i++){
+			AttackPositions.push(random (width/2 , width) + i * width/2)
+		}
+
+
 		scene = 'basement';
+
+
 
 	
 	}
@@ -121,6 +134,8 @@ function reSwap(){
 
 		blueX = width/2;
 		blueY = height/2;
+
+
 
 		scene = 'main' 
 
@@ -305,27 +320,42 @@ function basement(){
 	}
 
 
-
+	//gravity
 	if(blueY < 260){
 		blueYSpeed += GRAVITY;
-	}
+		blueIsJumping = true;
 
-	else{ 
+	}else{ 
 
 		blueYSpeed = 0;
-
+		blueIsJumping = false;
 	}
 
 
 	//jump 
 	if(!blueIsJumping && keyIsDown(32)){
-		blueYSpeed = -10;
+		blueYSpeed = -15;
+		blueIsJumping = true;
 	}
 
 	blueY  += blueYSpeed;
 
+	for(let i = 0; i < AttackPositions.length; i++){
+		let x = AttackPositions[i];
+		ghostAttacker(x);
+		AttackPositions[i] -= 5;
+
+	}
 
 
+	}
+
+
+	//jump animation 
+	if(blueIsJumping){
+		image(jump,blueX,blueY)
+	}
+	else
 	image(blueWalkRight,blueX,blueY);
 
 
@@ -399,4 +429,17 @@ function lose(){
 	}
 }		
 
+	function ghostAttacker(x){
+		let y = height - 140;
+		image(attacker,x,y)
+
+
+		if ( blueX - blueIdle.width/5 < x + attacker.width/5 && 
+		 blueX + blueIdle.width/5 > x - attacker.width/5 &&
+		 blueY - blueIdle.width/4 < y + attacker.width/5 &&
+		 blueY + blueIdle.width/4 > y - attacker.width/5 ){
+
+		 	scene = 'lose';
+
 }	
+}
