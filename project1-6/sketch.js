@@ -32,7 +32,7 @@ var blueIsJumping = true;
 var attacker; 
 var jump; 
 //ghost x values go in the array below
-var AttackPositions = [];
+var attackPositions = [];
 
 
 
@@ -114,10 +114,10 @@ function sceneSwap(){
 		blueX = 50;
 		blueY = groundY;
 
-		AttackPositions = [];
-		var attackerNumber = random (4,8);
+		attackPositions = [];
+		var attackerNumber = random (2,4);
 		for( let i = 0; i < attackerNumber; i++){
-			AttackPositions.push(random (width/2 , width) + i * width/2)
+			attackPositions.push(random (width/2 , width) + i * width/2)
 		}
 
 
@@ -140,7 +140,7 @@ function reSwap(){
 		scene = 'main' 
 
 	}
-
+/*
 function winSwap(){
 		scene = 'win' 
 
@@ -152,7 +152,7 @@ function winSwap(){
 function loseSwap(){
 		scene = 'lose'
 }
-
+*/
 function draw(){
 		//scene manager 
 		if(scene == 'main'){
@@ -340,16 +340,15 @@ function basement(){
 
 	blueY  += blueYSpeed;
 
-	for(let i = 0; i < AttackPositions.length; i++){
-		let x = AttackPositions[i];
+	for(let i = 0; i < attackPositions.length; i++){
+		let x = attackPositions[i];
 		ghostAttacker(x);
-		AttackPositions[i] -= 5;
+		attackPositions[i] -= 1;
 
+		if(i ==attackPositions.length - 1 && blueX > x){
+			scene = 'win';
+		}
 	}
-
-
-	}
-
 
 	//jump animation 
 	if(blueIsJumping){
@@ -442,4 +441,4 @@ function lose(){
 		 	scene = 'lose';
 
 }	
-}
+}}
