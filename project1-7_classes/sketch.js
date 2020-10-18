@@ -13,6 +13,8 @@ var blueWalkLeft;
 var wallImage;
 var floor;
 var brickWall = [];
+var woodFloor = [];
+var main;
 var player;
 var jump;
 var stairs 
@@ -35,7 +37,7 @@ function setup(){
 	createCanvas (400,400);
 	imageMode(CENTER);
 
-
+	main = new MapScene();
 
 
 //	brickWall = new GameObject(wallImage,100,200);
@@ -43,11 +45,19 @@ function setup(){
 //	brickWall.push(new GameObject(wallImage,100,200));
 
 
-	for(let i =0;i < 13; i++ ){
-		for(let y =0; y < 200; y+= 32){
-		brickWall.push(new GameObject(wallImage,i*32,y));
-		}
-	}
+	// for(let i =0;i < 13; i++ ){
+	// 	for(let y =0; y < 200; y+= 32){
+	// 	brickWall.push(new GameObject(wallImage,i*32,y));
+	// 	}
+	// }
+
+	// for(let i = 0; i <13; i++){
+	// 	for(let y = 200; y < height; y+=32){
+	// 		woodFloor.push(new GameObject(floor,i*32,y));
+	// 	}
+	// }
+
+
 
 /*
 
@@ -71,6 +81,8 @@ function draw(){
 
 	background(0);
 
+	main.draw(); 
+
 	//draws portal
 /*
 		for(let i = 0;i<portals.length;i++){
@@ -82,14 +94,18 @@ function draw(){
 
 
 
-	for(let i = 0;i<brickWall.length;i++){
-		brickWall[i].draw();
+	// for(let i = 0;i<brickWall.length;i++){
+	// 	brickWall[i].draw();
 
-	}
+	// }
 
-		if(portals.collide(player)){
-		portals.drawText();
-	}
+	// for(let i = 0; i <woodFloor.length; i++){
+	// 	woodFloor[i].draw();
+	// }
+
+	// 	if(portals.collide(player)){
+	// 	portals.draw()
+	// }
 
 	portals.draw();
 

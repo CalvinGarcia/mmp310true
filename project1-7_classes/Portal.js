@@ -3,7 +3,7 @@ class Portal extends GameObject{
 		super(stairs,x,y);
 	//	this.sceneToGo = sceneToGo;
 		}
-
+/*
 		drawText(){
 			textSize(20);
 			fill('white');
@@ -11,5 +11,5 @@ class Portal extends GameObject{
 
 			text("you are colliding",this.x-50,this.y-100);
 		}
-
+*/
 	}
