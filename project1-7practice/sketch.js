@@ -20,21 +20,24 @@ var jump;
 var stairs 
 var portals; 
 var redbricks;
+var platform;
 var scenes = {};		
 var currentScene = 'main';
+var minOb;
+var maxOb;
 
 
 function preload (){
-	blueIdle = loadImage ("blueidle.gif");
-	blueWalk = loadImage ("bluewalk.gif");
-	blueWalkBack = loadImage ("bluewalkback.gif");
-	blueWalkRight = loadImage("bluewalkright.gif");
-	blueWalkLeft = loadImage ("bluewalkleft.gif");
-	wallImage = loadImage("brickwalltexture.png");
-	floor = loadImage("floor232.png");
-	jump =loadImage("jump.gif")
-	stairs = loadImage("stairs.png");
-	redbricks = loadImage("redwalltexture.png");
+	blueIdle = loadImage ("images/blueidle.gif");
+	blueWalk = loadImage ("images/bluewalk.gif");
+	blueWalkBack = loadImage ("images/bluewalkback.gif");
+	blueWalkRight = loadImage("images/bluewalkright.gif");
+	blueWalkLeft = loadImage ("images/bluewalkleft.gif");
+	wallImage = loadImage("images/brickwalltexture.png");
+	floor = loadImage("images/floor232.png");
+	jump =loadImage("images/jump.gif")
+	stairs = loadImage("images/stairs.png");
+	redbricks = loadImage("images/redwalltexture.png");
 }	
 
 function setup(){
@@ -43,6 +46,7 @@ function setup(){
 
 	scenes.main = new MapScene();
 	scenes.basement = new Basement();
+	scenes.platform = new Platform();
 
 
 //	brickWall = new GameObject(wallImage,100,200);
@@ -73,7 +77,7 @@ function setup(){
 
 */
 	
-	portals = new Portal(100,300);
+	// portals = new Portal(100,300);
 
 	player = new Player(300,250);
 
@@ -91,15 +95,16 @@ function changeScene(sceneName){
 function draw(){
 	
 	scenes[currentScene].draw();
+	scenes[currentScene].setup();
 
-	portals.draw();
+//	portals.draw();
 
 
 
 
 	// background(0);
 
-	// main.draw(); 
+//	 main.draw(); 
 
 	
 

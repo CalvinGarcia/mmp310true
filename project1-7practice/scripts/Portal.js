@@ -9,7 +9,7 @@ class Portal extends GameObject{
 			fill('white');
 			text(this.message,width/2,height/2);
 
-			text("you are colliding",this.x-50,this.y-100);
+			text("you are colliding",this.x-50,this.y-100,"basement");
 		}
 
 	}

@@ -1,6 +1,5 @@
-class MapScene extends GameObject{
+class MapScene {
 	constructor(){
-	super(background,brickWall,woodFloor);
 	this.background = [];		
 	this.brickWall = [];
 	this.woodFloor= [];
@@ -20,9 +19,11 @@ class MapScene extends GameObject{
 			this.woodFloor.push(wood);
 		}
 	}
+		this.portals.push(new Portal("you are colliding",stairs,100,350,"platform"));
 
 
-	this.portals.push(new Portal("you are colliding",300,350,"basement"));
+
+//	this.portals.push(new Portal("you are colliding",300,350,"basement"));
 
 	
 }
@@ -43,25 +44,19 @@ draw(){
 	}
 
 	let enterPortal;
-		for(let i = 0; i < this.portals.length; i++){
-			this.portals[i].draw();
-
-			if(this.portals[i].collide(player)){
-				this.portalsl[i].drawText();
-
-				if(keyIsDown(ENTER)){
-					enterPortal = this.portal[i].sceneToGo;
-				}
-			}
-		}
-
-		if(enterPortal) {
-			changeScene(enterPortal); 
-		}
-
-
-		portals.draw();
+	for (let i = 0; i < this.portals.length; i++){
+		this.portals[i].draw();
 	
+		if	(this.portals[i].collide(player)){
+			enterPortal = this.portals[i].sceneToGo;
+	}
+}
+
+	if(enterPortal){
+		changeScene(enterPortal);
+	}
+
+	 
 	player.draw();
 
 }
