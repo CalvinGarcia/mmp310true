@@ -20,7 +20,7 @@ class Jumpy extends GameObject{
 		image(this.right,this.x,this.y);
 	}
 
-	if(this.y < height ){
+	if(this.y < height - 140 ){
 		this.ySpeed += this.GRAVITY;
 		this.isJumping = true;
 
