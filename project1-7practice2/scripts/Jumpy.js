@@ -16,7 +16,7 @@ class Jumpy extends GameObject{
 
 	draw(){
 
-	if(this.isJumping = false){
+	if(this.isJumping == false){
 		image(this.right,this.x,this.y);
 	}
 
