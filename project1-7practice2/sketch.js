@@ -47,9 +47,9 @@ function setup(){
 	createCanvas (400,400);
 	imageMode(CENTER);
 
-	scenes.main = new MapScene();
-	scenes.basement = new Basement();
-	scenes.platform = new Platformy();
+	// scenes.main = new MapScene();
+	// scenes.basement = new Basement();
+	scenes.platform = new Platform();
 
 
 //	brickWall = new GameObject(wallImage,100,200);

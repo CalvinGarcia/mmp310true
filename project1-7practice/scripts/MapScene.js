@@ -19,7 +19,7 @@ class MapScene {
 			this.woodFloor.push(wood);
 		}
 	}
-		this.portals.push(new Portal("you are colliding",stairs,100,350,"platform"));
+		this.portals.push(new Portal("you are colliding",stairs,100,350,"basement"));
 
 
 

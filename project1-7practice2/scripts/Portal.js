@@ -1,7 +1,7 @@
 class Portal extends GameObject{
 	constructor(message,image,x,y,sceneToGo){
-		super(stairs,x,y);
- 		this.sceneToGo = sceneToGo;
+		super(stairsDown,x,y);
+		this.sceneToGo = sceneToGo;
 		}
 
 		drawText(){
