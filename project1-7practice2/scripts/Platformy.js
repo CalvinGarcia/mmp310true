@@ -1,15 +1,12 @@
 class Platformy{
-	constructor(){
+	constructor(minOb,maxOb){
 		this.redBrickWall = [];
 		this.floor = [];
 		this.groundY = height - 100;
 		this.minOb = minOb;
 		this.maxOb = maxOb;
 		this.obstacles = [];
-		// this.GRAVITY = 1;
-		// this.speed = 2;
-		// this.ySpeed = 2;
-		// this.isJumping = true;
+	
 		
 
 		for(let i = 0; i < 13;i++){
@@ -23,15 +20,34 @@ class Platformy{
 					let wood = new GameObject(floorImage, i * 32, y);
 					this.floor.push(wood);
 				}
+
+	 	// var n = random(this.minOb, this.maxOb);
+	 	// for(let i = 0; i < n; i++){
+	 	// 	let x = random(width/2, width) + i * width/ 2;
+	 	// 	let obstacle = new Ghost (x,300);
+	 	// 	this.obstacles.push(obstacle);
+	 	// }
+
+
 			}
 		}
 	}
 
-	setup(){
+	setup(nextScene){
 
-		// imageMode(CENTER);
+		imageMode(CENTER);
 		jumpy.x = 50;
 		jumpy.y = 300;
+
+		var n = random(this.minOb,this.maxOb);
+		for(let i = 0; i < n; i++){
+			let x = random(width/2, width) + i * width/2;
+			let obstacle = new Ghost(x,height - 120);
+			this.obstacles.push(obstacle);
+		}
+
+		if (nextScene) this.nextScene = nextScene;
+
 
 	}
 
@@ -52,46 +68,29 @@ class Platformy{
 
 		}
 
-// //		gravity 
+		for(let i = 0; i < this.obstacles.length;i++){
+			let obstacle = this.obstacles[i];
+			obstacle.update();
+			obstacle.draw();
 
-// 		if(jumpy.isJumping = false){
-// 		image(jumpy.right,jumpy.x,jumpy.y);
-	
+		
 
-// 		}
+			if(obstacle.collide(jumpy)){
+				changeScene('lose', currentScene);
+			}
 
-// 		if(jumpy.y < 260){
-// 		jumpy.ySpeed += this.GRAVITY;
-// 		jumpy.isJumping = true;
-
-
-// 	}else{ 
-
-// 		//on ground	
-// 		jumpy.ySpeed = 0;
-// 		jumpy.isJumping = false;
-// 	}
+			if(i == this.obstacles.length - 1 && jumpy.x > obstacle.x){
+				changeScene('win', this.nextScene);
+				this.enterStarted = false;
+		}
 
 
-// 		//jump 
-// 	if(!jumpy.isJumping && keyIsDown(32)){
-// 		jumpy.ySpeed = -15;
-// 		jumpy.isJumping = true;
-// 	}
 
-// 	jumpy.y += jumpy.ySpeed;
-
-
-// 	if(jumpy.isJumping){
-// 		image(jumpy.jump,jumpy.x,jumpy.y);
-// 	}
-// 	else
-// 	image(jumpy.right,jumpy.x,jumpy.y);
-
-
-		jumpy.draw();
 	
 	}
 
 
+		jumpy.draw();
+
+}
 }

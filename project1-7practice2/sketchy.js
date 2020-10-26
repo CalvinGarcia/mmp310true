@@ -15,11 +15,10 @@ var floorImage;
 var player;
 var jump;
 var redWallImage;
-var attackerImage; 
 var stairsDown;
 var portals;
 var woodFloor
-
+var ghostImage;
 
 
 //arrays
@@ -27,6 +26,7 @@ var brickWall = [];
 var redBrickWall = [];
 var scenes = {};
 var floor = [];
+var obstacles;
 
 
 
@@ -40,14 +40,14 @@ var portals;
 var currentScene = 'main';
 var minOb;
 var maxOb;
-var attacker;
+var ghostAttack;
 var player;
 var GRAVITY;
 var groundY;
 var ySpeed=2;
 var isJumping = false;
 var speed;
-
+var attackPositions;
 
 function preload(){
 	blueIdle = loadImage ("images/blueidle.gif");
@@ -60,7 +60,8 @@ function preload(){
 	floorImage = loadImage("images/floor232.png");
 	jump = loadImage("images/jump.gif");
 	stairsDown = loadImage("images/stairs.png");
-	attackerImage = loadImage("images/ghostattack.png"); 
+	ghostImage = loadImage("images/ghostattack.png"); 
+
 
 }
 
@@ -69,15 +70,20 @@ function setup(){
 	createCanvas(400,400);
 	imageMode(CENTER);
 	scenes.main = new MapSceney();
-	scenes.platform = new Platformy();
+	scenes.platform = new Platformy(6,10);
 	player = new Player(200,200);
-	jumpy = new Jumpy(50,300);
+	jumpy = new Jumpy();
+	scenes.win = new Prompt('You win! Hit ENTER to Leave the Basement');
+	scenes.lose = new Prompt('You Lose! You must Win to escape! Press R Key NOW!');
 }
 
 
 
-function changeScene(sceneName){
+function changeScene(sceneName, nextScene){
 	currentScene = sceneName;
+	scenes[currentScene].setup(nextScene);
+
+
 }
 
 
@@ -85,7 +91,6 @@ function draw(){
 
 
 scenes[currentScene].draw();
-scenes[currentScene].setup();
 
 }
 

@@ -4,10 +4,10 @@ class Jumpy extends GameObject{
 		this.jump = jump;
 		this.right = blueWalkRight;
 		this.isJumping = true;
-		this.ySpeed = 2;
+		this.ySpeed = 3;
 		this.speed = 1;
 		// this.gravity = gravity;
-		this.GRAVITY = .5;
+		this.GRAVITY = 1;
 	
 
 
@@ -16,9 +16,9 @@ class Jumpy extends GameObject{
 
 	draw(){
 
-	if(this.isJumping == false){
-		image(this.right,this.x,this.y);
-	}
+	// if(this.isJumping == false){
+	// 	image(this.right,this.x,this.y);
+	// }
 
 	if(this.y < height - 140 ){
 		this.ySpeed += this.GRAVITY;
@@ -33,8 +33,8 @@ class Jumpy extends GameObject{
 
 	//jump 
 	if(!this.isJumping && keyIsDown(32)){
-		this.ySpeed = -150;
-		this.isJumping = true;
+		this.ySpeed = -10;
+	//	this.isJumping = true;
 	}
 
 	this.y += this.ySpeed ;
