@@ -9,7 +9,7 @@ class Player extends GameObject {
 		this.jump = jump;
 
 		this.isWalking = false;
-		this.isJumping = false;
+		
 
 		this.speed = 2;
 	}

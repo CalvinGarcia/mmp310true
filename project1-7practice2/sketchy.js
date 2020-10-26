@@ -81,7 +81,7 @@ function setup(){
 
 function changeScene(sceneName, nextScene){
 	currentScene = sceneName;
-	scenes[currentScene].setup(nextScene);
+	scenes[currentScene].setup(sceneName);
 
 
 }

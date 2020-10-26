@@ -53,7 +53,7 @@ draw(){
 }
 
 	if(enterPortal){
-		changeScene(enterPortal);
+		changeScene(enterPortal,currentScene);
 	}
 
 	player.draw();
