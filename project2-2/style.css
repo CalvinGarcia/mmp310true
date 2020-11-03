@@ -76,3 +76,7 @@ body{
 .question{
 	color:#ffffff;
 }
+
+button.disable{
+	display:none;
+}

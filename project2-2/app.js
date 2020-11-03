@@ -21,33 +21,21 @@ console.log(questions);
 
 
 //events 
-startButton.addEventListener('click', loadNextQuestion);
+startButton.addEventListener('click', function(){
+	startButton.classList.add('disable');
+	loadNextQuestion();
+});
 
 //callback function
 function loadNextQuestion(){
 
-	const questionContainer = document.createElement('div');
-	questionContainer.classList.add('question-container');
-	quizContainer.appendChild(questionContainer);
+let question = questions[currentQuestion].getHTML();
+ quizContainer.appendChild(question);
 
-	const question = document.createElement('h2');
-	question.classList.add('question');
-	question.textContent = "what is 2 +2?" ;
-	questionContainer.appendChild(question);
 
-	const answers = createElement('div', 'answers');
-	questionContainer.appendChild(answers);
-
-	const option1 = createElement('div', 'option', '2');
-	const option2 = createElement('div', 'option', '4');
-	const option3 = createElement('div', 'option', '8');
-
-	answers.appendChild(option1);
-	answers.appendChild(option2);
-	answers.appendChild(option3);
 
 }
-
+//helper function to create html elements 
 function createElement(tagName, className, text){
 	const element = document.createElement(tagName);
 	element.classList.add(className);
