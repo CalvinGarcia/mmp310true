@@ -5,11 +5,16 @@
 
 //html references
 
+
+
+
+
 const startButton = document.getElementById('start');
 const nextButton = document.getElementById('next');
 const endButton = document.getElementById('end');
 const message = document.getElementById('message');
 const quizContainer = document.getElementById('quiz');
+
 
 // quiz questions
 
@@ -17,9 +22,11 @@ let questions = [];
 let currentQuestion = 0;
 let score = 0;
 
-questions.push(new Question("what is 2+2", "4",["2","8"]));
-questions.push(new Question("what is 2x2", "4",["2","8"]));
-questions.push(new Question("what is 2 ÷ 2", "1",["2","19"]));
+
+
+questions.push(new Question("Which Avenger is Captain America?", "answers/capanswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Which Avenger is Captain America?", "answers/capanswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+
 
 // console.log(questions);
 

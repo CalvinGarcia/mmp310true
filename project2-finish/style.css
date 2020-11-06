@@ -6,13 +6,16 @@
 }
 
 body{
-	background: #007aaa;
+	background: url('starktower.jpg');
+
+/*	background-repeat: no-repeat;*/
+
 }
 
 #container{
-	
+	background: rgba(0,0,0,0.7);
 	margin: 0px auto;
-	max-width: 720px;
+	max-width: 960px;
 }
 
 

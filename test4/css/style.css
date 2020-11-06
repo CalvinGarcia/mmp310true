@@ -1,0 +1,32 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.container{
+	max-width: 960px;
+	margin:0px auto;
+
+
+}
+
+#interface{
+	display:flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	margin:5px;
+}
+
+
+
+#answers{
+	display:flex;
+	width:70%;
+	justify-content: space-between;
+
+}
+
+#answers img{
+	width:90%;
+}
+
