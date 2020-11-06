@@ -54,7 +54,7 @@ body{
 	margin-right:1em;
 }
 
-.answers{
+.answer{
 	display:flex;
 	justify-content: space-between;
 	font-size:2em;

@@ -9,13 +9,11 @@ class Question{
 	const questionHeader = createElement('h2', 'question', question);
 	this.questionContainer.appendChild(questionHeader);
 
-	const answers = createElement('div', 'answers');
+	const answers = createElement('div', 'answer');
 	this.questionContainer.appendChild(answers);
-
 
 	const answerDiv = createElement('div', 'option');
 	answers.appendChild(answerDiv);
-
 
 	const answerImg = new Image();
 	answerImg.src = answer;
@@ -23,10 +21,6 @@ class Question{
 	answerImg.addEventListener('click', function(){
 
 	});
-
-
-
-	
 
 	//user chooses correct option
 	answerDiv.addEventListener('click',function(){
@@ -46,11 +40,12 @@ class Question{
 	// 	answers.appendChild(option);
 
 	for(let i = 0; i < options.length; i++){
-		let option = new Image();
-		option.src = options[i];
-		answers.appendChild(option);
+		const optionImg = new Image();
+		optionImg.src = options[i];
+		answerDiv.appendChild(optionImg);
 
-
+		// answerDiv.appendChild(option);
+	
 	//user chooses wrong option 	
 		option.addEventListener('click', function(){
 			if(!answerAttempted){
