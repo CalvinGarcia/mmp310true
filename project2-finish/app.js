@@ -25,8 +25,9 @@ let score = 0;
 
 
 questions.push(new Question("Which Avenger is Captain America?", "answers/capanswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
-questions.push(new Question("Which Avenger is Captain America?", "answers/capanswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
-
+questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
 
 // console.log(questions);
 

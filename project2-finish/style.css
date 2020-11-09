@@ -54,26 +54,51 @@ body{
 	margin-right:1em;
 }
 
-.answer{
+.answers{
+	display:flex;
+	justify-content: space-between;
+	border-style: solid;
+	border-color:red;
+
+
+}
+
+.answers:hover{
+
+	border-style: solid;
+	border-color:white;
+	background: pink;
+}
+
+
+
+
+
+
+/*.answer{
 	display:flex;
 	justify-content: space-between;
 	font-size:2em;
-	align-items: center;
-	align-content: center;
+
+}*/
+
+.answers:hover{
+
+		background:#0044bb;
 }
+
+
 
 .option{
 	display:flex;
-	display:inline-block;
 	border:2px solid darkorange;
 	background:#22ccdd;
 	padding:10px;
 	flex-basis: 200px;
-	display:flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
 	border-radius:0.5em;
 	height:200px;
+	width:210px;
 }
 
 .option.correct-answer{
@@ -84,11 +109,12 @@ body{
 
 
 .option.wrong-answer{
-	border-color: red;
+	border-color: yellow;
 
 
 }
 .question{
+	font-family:'Architects Daughter', cursive;;
 	color:#ffffff;
 }
 

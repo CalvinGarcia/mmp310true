@@ -39,14 +39,13 @@ class Question{
 
 
 	for(let i = 0; i < options.length; i++){
-		// const option = createElement('div', 'option');
+		const option = createElement('div', 'option');
 	
 
 		const optionImg = new Image();
 		optionImg.src = options[i];
-		// option.appendChild(optionImg);
-		answers.appendChild(optionImg);
-
+		option.appendChild(optionImg);
+		answers.appendChild(options);
 
 		
 	
