@@ -30,9 +30,9 @@ questions.push(new Question("Which Avenger is a founding member of the team?", "
 questions.push(new Question("Which Avenger has financed the team with his own money?", "answers/spider-answer.jpg",["answers/capanswer.jpg", "answers/thinganswer.jpg"]));
 questions.push(new Question("Who is the first black Marvel hero?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
 questions.push(new Question("Who was the first villain the Avengers faced together?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
-questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
-questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
-questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Who is the first Avengers Villain to become an Avenger?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Who is the longest serving Avenger?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Which Avenger died in their first appearance?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
 
 
 // console.log(questions);
