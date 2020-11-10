@@ -12,15 +12,16 @@ class Question{
 	const answers = createElement('div', 'answers');
 	this.questionContainer.appendChild(answers);
 
-	// const answerDiv = createElement('div', 'options');
-	// answers.appendChild(answerDiv);
+	const answerDiv = createElement('div', 'option');
+	answers.appendChild(answerDiv);
 
 	const answerImg = new Image();
 	answerImg.src = answer;
-	answers.appendChild(answerImg);
+	answers.appendChild(answerDiv);
+	answerDiv.appendChild(answerImg);
 	answerImg.addEventListener('click', function(){
 		if(!answerAttempted) {
-		answers.classList.add('correct-answer');
+		answerDiv.classList.add('correct-answer');
 		answerAttempted = true;
 			questionAnswered(true);
 		}
@@ -39,13 +40,13 @@ class Question{
 
 
 	for(let i = 0; i < options.length; i++){
-		// const option = createElement('div', 'option');
+		const option = createElement('div', 'option');
 	
 
 		const optionImg = new Image();
 		optionImg.src = options[i];
-		// option.appendChild(optionImg);
-		answers.appendChild(optionImg);
+		option.appendChild(optionImg);
+		answers.appendChild(option);
 
 
 		

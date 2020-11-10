@@ -45,7 +45,7 @@ body{
 }
 
 .option:active{
-	border: 2px solid black;
+	border: 2px solid #00ccdd;
 }
 
 #start {
@@ -57,41 +57,19 @@ body{
 .answers{
 	display:flex;
 	justify-content: space-between;
-	border-style: solid;
-	border-color:red;
+
+	
 
 
 }
 
-.answers:hover{
 
-	border-style: solid;
-	border-color:white;
-	background: pink;
-}
-
-
-
-
-
-
-/*.answer{
-	display:flex;
-	justify-content: space-between;
-	font-size:2em;
-
-}*/
-
-.answers:hover{
-
-		background:#0044bb;
-}
 
 
 
 .option{
 	display:flex;
-	border:2px solid darkorange;
+	border:2px solid white;
 	background:#22ccdd;
 	padding:10px;
 	flex-basis: 200px;
@@ -101,7 +79,7 @@ body{
 	width:210px;
 }
 
-.option.correct-answer{
+.answerDiv.correct-answer{
 	border-color: green;
 
 
@@ -109,7 +87,7 @@ body{
 
 
 .option.wrong-answer{
-	border-color: yellow;
+	border-color: red;
 
 
 }

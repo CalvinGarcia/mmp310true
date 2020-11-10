@@ -25,9 +25,15 @@ let score = 0;
 
 
 questions.push(new Question("Which Avenger is Captain America?", "answers/capanswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Which one of these Avengers has also been a memeber of the Fantastic Four and X-Men? ", "answers/wolverineanswer.jpg",["answers/ironanswer.jpg", "answers/capanswer.jpg"]));
+questions.push(new Question("Which Avenger is a founding member of the team?", "answers/ironanswer.jpg",["answers/wolverineanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Which Avenger has financed the team with his own money?", "answers/spider-answer.jpg",["answers/capanswer.jpg", "answers/thinganswer.jpg"]));
+questions.push(new Question("Who is the first black Marvel hero?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+questions.push(new Question("Who was the first villain the Avengers faced together?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
 questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
 questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
 questions.push(new Question("Which Avenger is Captain America?", "answers/thinganswer.jpg",["answers/ironanswer.jpg", "answers/spider-answer.jpg"]));
+
 
 // console.log(questions);
 
