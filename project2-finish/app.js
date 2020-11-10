@@ -30,7 +30,7 @@ questions.push(new Question("Which Avenger is a founding member of the team?", "
 questions.push(new Question("Which Avenger has financed the team with his own money?", "answers/spider-answer.jpg",["answers/capanswer.jpg", "answers/thinganswer.jpg"]));
 questions.push(new Question("Which Avenger is the first black Marvel hero?", "answers/pantheranswer.jpg",["answers/falconanswer.jpg", "answers/cageanswer"]));
 questions.push(new Question("Who was the first villain the Avengers faced together?", "answers/lokianswer.jpg",["answers/kanganswer.jpg"]));
-questions.push(new Question("Who is the first Avengers Villain to become an Avenger?", "answers/hawkeyeanswer.jpg",["answers/visionanswer.jpg", "answers/lokianswer.jpg"]));
+questions.push(new Question("Who is the first Avengers Villain to become an Avenger?", "answers/hawkeyeanswer",["answers/visionanswer.jpg", "answers/lokianswer.jpg"]));
 questions.push(new Question("Who is the longest serving Avenger?", "answers/capanswer.jpg",["answers/wondermananswer.jpg", "answers/ironanswer.jpg"]));
 questions.push(new Question("Which Avenger died in their first appearance?", "answers/wondermananswer.jpg",["answers/capanswer.jpg", "answers/thoranswer.jpg"]));
 
