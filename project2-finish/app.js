@@ -28,7 +28,7 @@ questions.push(new Question("Let's start with an easy one. Which Avenger is Capt
 questions.push(new Question("Which one of these Avengers has also been a memeber of the Fantastic Four and X-Men? ", "answers/wolverineanswer.jpg",["answers/ironanswer.jpg", "answers/thoranswer.jpg"]));
 questions.push(new Question("Which Avenger is a founding member of the team?", "answers/ironanswer.jpg",["answers/wolverineanswer.jpg", "answers/spider-answer.jpg"]));
 questions.push(new Question("Which Avenger has financed the team with his own money?", "answers/spider-answer.jpg",["answers/capanswer.jpg", "answers/thinganswer.jpg"]));
-questions.push(new Question("Which Avenger is the first black Marvel hero?", "answers/pantheranswer.jpg",["answers/falconanswer.jpg", "answers/cageanswer.jpg"]));
+questions.push(new Question("Which Avenger is the first black Marvel hero?", "answers/pantheranswer.jpg",["answers/falconanswer.jpg", "answers/cageanswer"]));
 questions.push(new Question("Who was the first villain the Avengers faced together?", "answers/lokianswer.jpg",["answers/kanganswer.jpg"]));
 questions.push(new Question("Who is the first Avengers Villain to become an Avenger?", "answers/hawkeyeanswer.jpg",["answers/visionanswer.jpg", "answers/lokianswer.jpg"]));
 questions.push(new Question("Who is the longest serving Avenger?", "answers/capanswer.jpg",["answers/wondermananswer.jpg", "answers/ironanswer.jpg"]));
