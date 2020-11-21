@@ -1,7 +1,7 @@
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-camera.position.set( 0, 0.5,10);
+camera.position.set( 0, 10,8 );
 
 const renderer = new THREE.WebGLRenderer( {alpha: true} );
 renderer.setSize( window.innerWidth, window.innerHeight );
@@ -36,10 +36,9 @@ const width = 10;
 
 const loader = new THREE.ObjectLoader();
 loader.load( 'scene.json', onLoad );
-loader.load( 'cactus22.json', onLoad);
+loader.load( 'cactus2.json', onLoad);
 loader.load( 'cactus3.json', onLoad);
-loader.load( 'rock.json', onLoad );
-
+// loader.load( ' rock.json' , onLoad);
 
 
 const p = Math.random () *5 ;
@@ -53,11 +52,11 @@ function onLoad( cactus ){
 
 
 	cactus.scale.set( 0.5, 0.5, 0.5);
-	cactus.rotation.y = Math.PI * 5;
-	cactus.position.set( 8 , 0 , 5);
-	// cactus.position.x = 6;
-	// cactus.position.z = -6;
-	// scene.add( cactus );
+	cactus.rotation.y = Math.PI * p;
+	// cactus.position.set( p , 0 , p);
+	cactus.position.x = x;
+	cactus.position.z = p;
+	scene.add( cactus );
 
 
 	
@@ -76,15 +75,7 @@ function onLoad( cactus ){
 	animate();
 }
 
-function onLoad( rock ){
 
-	rock.scale.set ( 0.7, 0.7, 0.7 );
-	rock.rotation.y = Math.PI * np;
-	rock.position.set( -5, 0, 5)
-	// rock.position.x = 8;
-	scene.add( rock );
-
-}
 
 
 
@@ -99,6 +90,6 @@ function animate() {
 	renderer.render( scene, camera );
 }
 
-animate();
+
 
 
