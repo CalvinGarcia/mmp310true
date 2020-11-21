@@ -107,53 +107,6 @@ loader.load( 'scene.json', function( cactus ){
 
 
 
-// const loader = new THREE.ObjectLoader();
-// loader.load( 'scene.json', function( cactus ){
-
-// cactus.scale.set( 0.5, 0.5, 0.5);
-// cactus.rotation.y = Math.PI * p;
-// cactus.position.set( 4 , 0 , 4);
-// scene.add( cactus );
-
-
-// animate();
-
-// } );
-
-// loader.load( ' rock.json' , onLoad);
-
-
-const p = Math.random () *5 ;
-const np = Math.random() *-5;
-
-
-
-// function onLoad( cactus ){
-
-// 	for (let x = -8; x < 8; x++){
-
-
-// 	cactus.scale.set( 0.5, 0.5, 0.5);
-// 	cactus.rotation.y = Math.PI * p;
-	// cactus.position.set( p , 0 , p);
-// 	cactus.position.x = x;
-// 	cactus.position.z = p;
-// 	scene.add( cactus );
-
-
-	
-
-	
-// }
-
-
-
-	// cactus.scale.set( 0.5 , 0.5, 0.5);
-	// cactus.rotation.y = Math.PI * p;
-	// cactus.position.set( p, 0.15, p);
-
-
-	// scene.add( cactus );
 	animate();
 
 
