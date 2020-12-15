@@ -60,7 +60,7 @@ function preload(){
 	floorImage = loadImage("images/floor232.png");
 	jump = loadImage("images/jump.gif");
 	stairsDown = loadImage("images/stairs.png");
-	// ghostImage = loadImage("images/ghostattack.png"); 
+	ghostImage = loadImage("images/ghostattack.png"); 
 
 
 }
