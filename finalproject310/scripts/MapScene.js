@@ -6,16 +6,63 @@ constructor(){
 		draw(){
 			background(150);
 
+			image(map,width/2,height/2);
+
 			enemy.draw();
 			player.draw();
-			
-		if(player.playerIsAttacking = true && enemy.collide(player)){
-		enemy.lives -=1 ;
+
+
+//player lives
+		for(let i = 0; i < player.lives; i++){
+		let x = 20 + i * 30;
+		fill('black');
+		text("player 1" , 10, 20);
+		textSize(20);
+		ellipse(x, 40, 20);
+	}
+
+//enemy lives
+		for(let i = 0; i < enemy.lives; i++){
+		fill('red');
+		let x = 490 + i * 30;
+		ellipse(x, 40, 20);
+		textSize(20);
+		text("hammer" , 530, 20);
 	}
 
 
-		}
 
+//win condition
+	if(enemy.lives < 1){
+		textSize(20);
+		fill('white')
+		text("You Win", width/2 , height/2);
 
+	}
+
+//lose condition	
+
+	if(player.lives < 1){
+		textSize(20);
+		fill('white');
+		text("Player 1 Loses ", width/2-80 , height/2);
+
+	}
+
+if(player.collide(enemy) && player.isAttacking){
+	enemy.lives--;
+	}
+}
+	
 
 }
+
+
+
+
+
+
+
+	
+	
+		

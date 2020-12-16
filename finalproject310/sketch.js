@@ -12,6 +12,7 @@ var playerAttack;
 var enemyCharacter;
 var enemyWalk;
 var enemyAttack;
+var map;
 
 // sketch variables
 
@@ -28,6 +29,7 @@ function preload(){
 	enemyCharacter = loadImage("images/enemy.png");
 	enemyWalk = loadImage("animations/enemywalk.gif");
 	enemyAttack = loadImage("animations/enemyattack.gif");
+	map = loadImage("images/map.jpg");
 
 	player = new Player( 200, 200 );
 	enemy = new Enemy( 400, 200 );
@@ -48,6 +50,8 @@ function draw(){
 	background(200);
 
 	scene.draw();
+
+
 	// enemy.draw();
 	// player.draw();
 
