@@ -6,54 +6,126 @@ class Enemy extends GameObject{
 		this.attack = enemyAttack;
 		this.walk = enemyWalk; 
 		this.isWalking = false;
-		this.isAttacking = true; 
+		this.enemyAttacking = true; 
 		this.speed = 2;
 
 		this.lives = 4;
 	}
 
+
 	draw(){
 
+		this.isWalking = false;
+		this.isAttacking = false;
 
-	// for(let i = 0; i < enemy.lives; i++){
-	// 	fill('red');
-	// 	let x = 490 + i * 30;
-	// 	ellipse(x, 40, 20);
-	// 	textSize(20);
-	// 	text("badguy" , 530, 20);
+//controls
 	
-	// }	
+	
 
-	// 	if(player.playerIsAttacking && enemy.collide(player)){
-	// 	this.lives--;
-	// }
+			if(keyIsDown(RIGHT_ARROW)){
+			// image(this.walk,this.x,this.y);
+			this.x += this.speed;
+			this.isWalking = true;
 
-	image(this.character,this.x,this.y);
+			}
 
-	// if(player.x > width/2){
-	// 	this.x -= this.speed;
-	// }
-	// 		if (this.x - this.width/3 < player.x + player.width/3 &&
-	// 			this.x + this.width/3 > player.x - player.width/3 &&
-	// 			this.y - this.height/3 < player.y + player.height/3 &&
-	// 			this.y + this.height/3 > player.y + player.height/3){
-	// 			image(this.attack,this.x, this.y);
-	// 		}
+			if(keyIsDown(LEFT_ARROW)){
+			// image(this.walk,this.x,this.y);
+			this.x -= this.speed;
+			this.isWalking = true;
+
+			}
+
+			if(keyIsDown(UP_ARROW)){
+			// image(this.walk,this.x,this.y);
+			this.y -= this.speed;
+			this.isWalking = true;
+
+			}	
+
+			if(keyIsDown(DOWN_ARROW)){
+			// image(this.walk,this.x,this.y);
+			this.y += this.speed;
+			this.isWalking = true;		
+
+			}
 
 
+	//attack
 
-	// // if(player.x > width/2){
-	// // 	image(this.attack,this.x,this.y);
-	// // 	this.isAttacking = true;
+				if(keyIsDown(80)){
+					this.isAttacking = true;
+				}
+
+				if(this.isAttacking){
+					image(this.attack,this.x,this.y);
+				}
+				else if(this.isWalking){
+					image(this.walk,this.x,this.y);
+	//idle image
+
+				}
+				else{
+				image(this.character,this.x,this.y);
+			}
+	
+		
+
+	
+}
 
 		
-		}
-	}
+// //old controls
 
+// 			if(keyIsDown(68)){
+// 			// image(this.walk,this.x,this.y);
+// 			this.x += this.speed;
+// 			this.isWalking = true;
+
+// 			}
+
+// 			if(keyIsDown(65)){
+// 			// image(this.walk,this.x,this.y);
+// 			this.x -= this.speed;
+// 			this.isWalking = true;
+
+// 			}
+
+// 			if(keyIsDown(87)){
+// 			// image(this.walk,this.x,this.y);
+// 			this.y -= this.speed;
+// 			this.isWalking = true;
+
+// 			}	
+
+// 			if(keyIsDown(83)){
+// 			// image(this.walk,this.x,this.y);
+// 			this.y += this.speed;
+// 			this.isWalking = true;		
+
+// 			}
+
+
+// 	//attack
+
+// 				if(keyIsDown(32)){
+// 					this.isAttacking = true;
+// 				}
+
+// 				if(this.isAttacking){
+// 					image(this.attack,this.x,this.y);
+// 				}
+// 				else if(this.isWalking){
+// 					image(this.walk,this.x,this.y);
+// 	//idle image
+// 				}
+// 				else{
+// 				image(this.character,this.x,this.y);
+// 			}
+// }
 		
-	// }
+		
 
+	
 
-
-
-
+}

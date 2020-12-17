@@ -13,13 +13,17 @@ var enemyCharacter;
 var enemyWalk;
 var enemyAttack;
 var map;
+var cover;
+var currentScene = "title";
 
 // sketch variables
 
 var player;
 var enemy;
 var scene;
-
+var title;
+var main;
+var p1win;
 
 function preload(){
 	playerCharacter = loadImage("images/player.png");
@@ -31,9 +35,9 @@ function preload(){
 	enemyAttack = loadImage("animations/enemyattack.gif");
 	map = loadImage("images/map.jpg");
 
-	player = new Player( 200, 200 );
-	enemy = new Enemy( 400, 200 );
-	scene = new MapScene;
+	cover = loadImage("images/coverimage.jpg");
+
+
 
 
 
@@ -44,12 +48,32 @@ function preload(){
 function setup(){
 	createCanvas(600,400);
 	imageMode(CENTER);
+	player = new Player( 200, 300 );
+	enemy = new Enemy( 400, 300 );
+	main = new MapScene();
+	title = new Title();
+	p1win = new P1Win();
+
 }
+
+
 
 function draw(){
 	background(200);
 
-	scene.draw();
+	main.draw();
+	title.draw();
+
+	if (currentScene == "title"){
+			title.draw();
+		}
+		else if(currentScene == "main"){
+				main.draw();
+			}
+		else if(currentScene == "p1win"){
+				p1win.draw();
+			}	
+		}
 
 
 	// enemy.draw();
@@ -58,4 +82,3 @@ function draw(){
 
 
 
-}
