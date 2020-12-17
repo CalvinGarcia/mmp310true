@@ -52,7 +52,7 @@ function setup(){
 	enemy = new Enemy( 400, 300 );
 	main = new MapScene();
 	title = new Title();
-	p1win = new P1Win();
+	// p1win = new P1Win();
 
 }
 
@@ -70,12 +70,12 @@ function draw(){
 		else if(currentScene == "main"){
 				main.draw();
 			}
-		else if(currentScene == "p1win"){
-				p1win.draw();
-			}	
-		}
+		// else if(currentScene == "p1win"){
+		// 		p1win.draw();
+		// 	}	
+		// }
 
-
+}
 	// enemy.draw();
 	// player.draw();
 
