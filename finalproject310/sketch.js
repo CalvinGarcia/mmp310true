@@ -27,12 +27,12 @@ var p1win;
 
 function preload(){
 	playerCharacter = loadImage("images/player.png");
-	playerWalk = loadImage("animations/playerwalk.gif");
+	playerWalk = loadImage("animations/newnewestplayer.gif");
 	playerAttack = loadImage("animations/playerattack.gif");
 
-	enemyCharacter = loadImage("images/enemy.png");
-	enemyWalk = loadImage("animations/enemywalk.gif");
-	enemyAttack = loadImage("animations/enemyattack.gif");
+	enemyCharacter = loadImage("images/newestenemy.png");
+	enemyWalk = loadImage("animations/newestwalk.gif");
+	enemyAttack = loadImage("animations/newestpunch.gif");
 	map = loadImage("images/map.jpg");
 
 	cover = loadImage("images/coverimage.jpg");
