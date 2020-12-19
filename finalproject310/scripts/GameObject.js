@@ -14,8 +14,10 @@ class GameObject {
 
 	collide(other){
 
-			if (this.x + this.width/6 > other.x - other.width/6 &&
-				this.x - this.width/6 < other.x - other.width/6) {
+			if (this.x - this.width/5 < other.x + other.width/5 && 
+		 		this.x + this.width/5 > other.x - other.width/5 &&
+				this.y - this.width/4 < other.y + other.height/5 &&
+				this.y + this.width/4 > other.y - other.height/5 ) {
 			return true;
 		
 		}	

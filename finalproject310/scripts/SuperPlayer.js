@@ -1,4 +1,4 @@
-class Player extends GameObject{
+class SuperPlayer extends GameObject{
 
 	constructor(x,y){
 		super(playerCharacter, x, y);
@@ -8,7 +8,6 @@ class Player extends GameObject{
 		this.isWalking; 
 		this.isAttacking;
 		this.speed =2
-		this.attackKeyWasPressed = false;
 
 		this.lives = 3;
 
@@ -65,15 +64,10 @@ class Player extends GameObject{
 	//attack
 
 				if(keyIsDown(32)){
-					this.attackKeyWasPressed = true;
-				}
-
-				if(!keyIsDown(32) && this.attackKeyWasPressed){
 					this.isAttacking = true;
-					this.attackKeyWasPressed = false;
 				}
 
-				if(this.attackKeyWasPressed){
+				if(this.isAttacking){
 					image(this.attack,this.x,this.y);
 				}
 				else if(this.isWalking){

@@ -51,28 +51,29 @@ class Enemy extends GameObject{
 			}
 
 
-	//attack
+//attack
 
 				if(keyIsDown(80)){
-					this.isAttacking = true;
+					this.attackKeyWasPressed = true;
 				}
 
-				if(this.isAttacking){
+				if(!keyIsDown(80) && this.attackKeyWasPressed){
+					this.isAttacking = true;
+					this.attackKeyWasPressed = false;
+				}
+
+				if(this.attackKeyWasPressed){
 					image(this.attack,this.x,this.y);
 				}
 				else if(this.isWalking){
 					image(this.walk,this.x,this.y);
 	//idle image
-
 				}
 				else{
 				image(this.character,this.x,this.y);
 			}
-	
-		
-
-	
 }
+}		
 
 		
 // //old controls
@@ -128,4 +129,4 @@ class Enemy extends GameObject{
 
 	
 
-}
+
