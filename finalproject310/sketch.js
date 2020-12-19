@@ -12,6 +12,16 @@ var playerAttack;
 var enemyCharacter;
 var enemyWalk;
 var enemyAttack;
+
+//flip
+var enemyAttackFlip;
+var enemyWalkFlip;
+var enemyFlip;
+var playerFlip;
+var playerWalkFlip;
+var playerAttackFlip
+
+
 var map;
 var cover;
 var currentScene = "title";
@@ -33,6 +43,13 @@ function preload(){
 	enemyCharacter = loadImage("images/newestenemy.png");
 	enemyWalk = loadImage("animations/newestwalk.gif");
 	enemyAttack = loadImage("animations/newestpunch.gif");
+
+	enemyFlipWalk = loadImage("animations/flip/newestwalk.gif");
+	enemyAttackFlip = loadImage("animations/flip/flippurplepunch_.gif");
+
+	playerAttackFlip = loadImage("animations/flip/flipplayerattack.gif");
+	playerWalkFlip = loadImage("animations/flip/flipplayerwalk.gif");
+
 	map = loadImage("images/map.jpg");
 
 	cover = loadImage("images/coverimage.jpg");

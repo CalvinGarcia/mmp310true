@@ -8,6 +8,8 @@ class Enemy extends GameObject{
 		this.isWalking = false;
 		this.enemyAttacking = true; 
 		this.speed = 2;
+		this.enemyAttackFlip = enemyAttackFlip;
+		this.enemyWalkFlip = enemyWalkFlip;
 
 		this.lives = 4;
 	}
@@ -50,8 +52,7 @@ class Enemy extends GameObject{
 
 			}
 
-
-//attack
+	//attack
 
 				if(keyIsDown(80)){
 					this.attackKeyWasPressed = true;
@@ -62,19 +63,35 @@ class Enemy extends GameObject{
 					this.attackKeyWasPressed = false;
 				}
 
-				if(this.attackKeyWasPressed){
+	//flip attack code
+	
+				if(this.attackKeyWasPressed && this.x < player.x){
+					image(this.enemyAttackFlip,this.x,this.y);
+				}			
+
+				else if(this.attackKeyWasPressed){
 					image(this.attack,this.x,this.y);
 				}
+	//flip walk code
+				
+				 if(this.isWalking && this.x < player.x){
+					image(this.enemyWalkFlip,this.x,this.y);
+				}	
+	//walk
+				
 				else if(this.isWalking){
 					image(this.walk,this.x,this.y);
+				}	
+
+
 	//idle image
-				}
-				else{
+			
+				else if(!this.isWalking && !this.isAttacking && !this.attackKeyWasPressed){
 				image(this.character,this.x,this.y);
 			}
 }
-}		
-
+		
+}
 		
 // //old controls
 

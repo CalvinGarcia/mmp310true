@@ -9,6 +9,9 @@ class Player extends GameObject{
 		this.isAttacking;
 		this.speed =2
 		this.attackKeyWasPressed = false;
+		this.playerAttackFlip = playerAttackFlip;
+		this.playerWalkFlip = playerWalkFlip; 
+		this.playerFlip = playerFlip;
 
 		this.lives = 3;
 
@@ -62,6 +65,7 @@ class Player extends GameObject{
 			}
 
 
+
 	//attack
 
 				if(keyIsDown(32)){
@@ -73,17 +77,38 @@ class Player extends GameObject{
 					this.attackKeyWasPressed = false;
 				}
 
-				if(this.attackKeyWasPressed){
+	//flip attack code
+	
+				if(this.attackKeyWasPressed && this.x > enemy.x){
+					image(this.playerAttackFlip,this.x,this.y);
+				}			
+
+				else if(this.attackKeyWasPressed){
 					image(this.attack,this.x,this.y);
 				}
+	//flip walk code
+				
+				 if(this.isWalking && this.x > enemy.x){
+					image(this.playerWalkFlip,this.x,this.y);
+				}	
+	//walk
+				
 				else if(this.isWalking){
 					image(this.walk,this.x,this.y);
+				}	
+
+
 	//idle image
-				}
-				else{
+			
+				else if(!this.isWalking && !this.isAttacking && !this.attackKeyWasPressed){
 				image(this.character,this.x,this.y);
 			}
 }
+				
+// 				else{
+// 				image(this.character,this.x,this.y);
+// 			}
+// }
 }		
 
 // 			if(keyIsDown(RIGHT_ARROW)){
