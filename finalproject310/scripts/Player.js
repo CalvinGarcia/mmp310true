@@ -13,7 +13,7 @@ class Player extends GameObject{
 		this.playerWalkFlip = playerWalkFlip; 
 		this.playerFlip = playerFlip;
 
-		this.lives = 3;
+		this.lives = 4;
 
 	}
 

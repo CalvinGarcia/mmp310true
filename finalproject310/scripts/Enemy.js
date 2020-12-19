@@ -9,7 +9,7 @@ class Enemy extends GameObject{
 		this.enemyAttacking = true; 
 		this.speed = 2;
 		this.enemyAttackFlip = enemyAttackFlip;
-		this.enemyWalkFlip = enemyWalkFlip;
+		this.enemyWalkFlip = enemyFlipWalk;
 
 		this.lives = 4;
 	}

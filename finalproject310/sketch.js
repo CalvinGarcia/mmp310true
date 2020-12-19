@@ -19,7 +19,8 @@ var enemyWalkFlip;
 var enemyFlip;
 var playerFlip;
 var playerWalkFlip;
-var playerAttackFlip
+var playerAttackFlip;
+
 
 
 var map;
@@ -34,6 +35,7 @@ var scene;
 var title;
 var main;
 var p1win;
+
 
 function preload(){
 	playerCharacter = loadImage("images/player.png");
@@ -58,7 +60,6 @@ function preload(){
 
 
 
-
 }
 
 
@@ -69,6 +70,7 @@ function setup(){
 	enemy = new Enemy( 400, 300 );
 	main = new MapScene();
 	title = new Title();
+
 	// p1win = new P1Win();
 
 }
@@ -77,6 +79,7 @@ function setup(){
 
 function draw(){
 	background(200);
+
 
 	main.draw();
 	title.draw();
